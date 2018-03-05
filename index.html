@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+	<title>Animate.css Sandbox</title>
+	<style>
+		#section-1{
+			animation-delay: 1s;
+			animation-duration: 1s;
+			animation-iteration-count: 1;
+		}
+		#section-2{
+			animation-delay: 2s;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header class="animated slideInDown text-center bg-primary text-white p-5".>
+			<h1 class="display-4">Animate.css Sandbox</h1>
+		</header>
+		<section id="section-1" class="animated slideInLeft bg-faded p-5 my-3">
+			<h1>Section One</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsum, culpa vitae delectus recusandae beatae maiores eius, ipsam quas itaque ullam! Quod suscipit harum accusantium, at, error cum dolores perspiciatis, impedit eum, ad in numquam nemo id dicta quae ab reiciendis iste nostrum aspernatur. A ullam cupiditate, optio ex excepturi!</p>
+		</section>
+		<section id="section-2" class="animated slideInRight bg-faded p-5 my-3">
+			<h1 id="anim-head">Section Two</h1>
+			<p id="anim-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ipsum, culpa vitae delectus recusandae beatae maiores eius, ipsam quas itaque ullam! Quod suscipit harum accusantium, at, error cum dolores perspiciatis, impedit eum, ad in numquam nemo id dicta quae ab reiciendis iste nostrum aspernatur. A ullam cupiditate, optio ex excepturi!</p>
+			<button id="animateBTN" class="btn btn-primary">Animate</button>
+		</section>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+		
+	<script>
+		$(function(){
+			$('#animateBtn').click(function(){
+				animate('#anim-head', 'bounce');
+				//animate('#anim-body', 'rubberband');
+
+				return false;
+			});
+
+			// Animate
+			function animate(element, animation){
+				$(element).addClass('animated ' +animation);
+				var wait = setTimeout(function(){
+					$(element).removeClass('animated ' +animation);
+				}, 1000);
+			}
+		})
+	</script>
+</body>
+</html>
